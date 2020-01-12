@@ -1,17 +1,18 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+# work_bot
 
 * Ruby version
+`2.7.0`
 
 * System dependencies
+`rails 6.0.2.1`
 
 * Configuration
 
 * Database creation
+``
+rails db:create
+rails db:migrate
+``
 
 * Database initialization
 
@@ -21,5 +22,5 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-# bot_shippings
+* Resources
+- https://docs.microsoft.com/en-us/outlook/rest/ruby-tutorial

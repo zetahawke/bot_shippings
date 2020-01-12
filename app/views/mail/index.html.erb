@@ -1,0 +1,15 @@
+<h1>My messages</h1>
+<table class="table">
+  <tr>
+    <th>From</th>
+    <th>Subject</th>
+    <th>Received</th>
+  </tr>
+  <% @messages.each do |message| %>
+    <tr>
+      <td><%= message.from.email_address.name %></td>
+      <td><%= message.subject %></td>
+      <td><%= message.received_date_time %></td>
+    </tr>
+  <% end %>
+</table>
