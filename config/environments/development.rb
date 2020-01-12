@@ -58,4 +58,7 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.carolina_bot_azure_token = '2ed5c302-fc6c-4d24-be96-311e91112905'
+  config.carolina_bot_azure_client_secret = 'CpU=]A=li4053AFCoq[478hb8H0UXnzM'
 end
