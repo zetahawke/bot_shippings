@@ -1,10 +1,11 @@
 # work_bot
+## Outlook client for automatization of known mechanized daily tasks
 
 * Ruby version
-`2.7.0`
+`2.6.4`
 
 * System dependencies
-`rails 6.0.2.1`
+`rails 5.2.4.1`
 
 * Configuration
 
