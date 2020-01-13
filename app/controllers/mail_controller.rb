@@ -18,6 +18,7 @@ class MailController < ApplicationController
 
       mail_folders = graph.me.mail_folders
       @folders = mail_folders.map { |w| w }
+      binding.pry
       @messages = mail_folders.find('inbox').messages.order_by('receivedDateTime desc').first(50)
     else
       # If no token, redirect to the root url so user
