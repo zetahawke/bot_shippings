@@ -1,15 +1,49 @@
-<h1>My messages</h1>
-<table class="table">
-  <tr>
-    <th>From</th>
-    <th>Subject</th>
-    <th>Received</th>
-  </tr>
-  <% @messages.each do |message| %>
-    <tr>
-      <td><%= message.from.email_address.name %></td>
-      <td><%= message.subject %></td>
-      <td><%= message.received_date_time %></td>
-    </tr>
-  <% end %>
-</table>
+<br><br>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1>My folders</h1>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <tr>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Received</th>
+        </tr>
+        <%- unless @folders.blank? %>
+          <% @folders.each do |folder| %>
+            <tr>
+              <td><%= folder.display_name %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      <h1>My messages</h1>
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <tr>
+          <th>From</th>
+          <th>To</th>
+          <th>Subject</th>
+          <th>Received</th>
+        </tr>
+        <%- unless @messages.blank? %>
+          <% @messages.each do |message| %>
+            <tr>
+              <td><%= message.from.email_address.address %></td>
+              <td><%= message.to_recipients.map { |to| to.email_address.address }.join(', ') %></td>
+              <td><%= message.subject %></td>
+              <td><%= message.received_date_time %></td>
+            </tr>
+          <% end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

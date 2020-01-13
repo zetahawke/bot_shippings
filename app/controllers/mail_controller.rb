@@ -14,7 +14,11 @@ class MailController < ApplicationController
                                  cached_metadata_file: File.join(MicrosoftGraph::CACHED_METADATA_DIRECTORY, 'metadata_v1.0.xml'),
                                  &callback)
 
-      @messages = graph.me.mail_folders.find('inbox').messages.order_by('receivedDateTime desc')
+      User.identify_user(graph.me, session)
+
+      mail_folders = graph.me.mail_folders
+      @folders = mail_folders.map { |w| w }
+      @messages = mail_folders.find('inbox').messages.order_by('receivedDateTime desc').first(50)
     else
       # If no token, redirect to the root url so user
       # can sign in.
